@@ -10,7 +10,7 @@ What's an n_gram? For sake of simplicity, it's a sequence of N words. Example: f
 
 What about n_match? It's the number of possible matches you desire for a single word/record. You may be looking for only the first highest match or more than one possible matches, so adjust the number accordingly.
 
-The main module used for matching records is [tfidf matcher](https://github.com/LouisTsiattalou/tfidf_matcher), I personally found it to produce acceptable results with decent execution time that fits the nature of this script. 
+The main module used for matching records is [tfidf matcher](https://github.com/LouisTsiattalou/tfidf_matcher), it produced acceptable results with decent execution time that fits the nature of this script. 
 
 ## How it works
 
