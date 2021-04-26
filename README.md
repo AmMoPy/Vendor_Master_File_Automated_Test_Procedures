@@ -22,7 +22,7 @@ The following are fundamental data sources for script execution:
 - System access rights for vendor record modifications
 - Purchase Order detailed Analysis
 
-Data is loaded in a CSV format, code is applied and all results are saved in one excel workbook having each detailed and summary tables in separate sheets.
+Data is loaded in a CSV format, code is applied and all results are saved in one excel workbook each in separate sheet.
 
 Loading data in a CSV format is critical for fast execution time. You can either:
 
@@ -32,7 +32,7 @@ Loading data in a CSV format is critical for fast execution time. You can either
 I've also provided Notebook version for convenience. However, working with Python script is more fun and interactive! A typical work flow using the macro enabled excel sheet would be as follows:
 
 - Copy paste your data to each sheet respectively, don't change headers!
-- Press ctrl + shift + s to activate the macro and export CSV files. You can then close the excel sheet without saving.
+- Press ctrl + shift + s to activate the macro and export CSV files.
 - Run the script, select preferred parameters.
 - Enjoy the results.
 
@@ -41,8 +41,8 @@ I've also provided Notebook version for convenience. However, working with Pytho
 A set of detailed and summary tables are produced as follows:
 
 - Vendor records exact and fuzzy name matching ---> first identifying possible name matches, then calculating similarities between each name & sorting results in descending order.
-- Active employees vs. vendor records exact and fuzzy name matching ---> same procedures as vendor records match but between active employee names and vendor names.
-- Terminated employees vs. vendor records exact and fuzzy name matching ---> same procedures as vendor records match but between terminated employee names and vendor names.
+- Active employees vs. vendor records exact and fuzzy name matching ---> same procedures as above applied to active employee names and vendor names.
+- Terminated employees vs. vendor records exact and fuzzy name matching ---> same procedures as above applied to terminated employee names and vendor names.
 - Filtering out non-English names.
 - Identifying all POs issued to employees ---> identify all POs issued to employees either active or terminated, both exact and fuzzy name matches are considered.
 - Identifying unauthorized record manipulation ---> comparing edit history of vendor records to the approved access rights and employee records.
@@ -50,9 +50,9 @@ A set of detailed and summary tables are produced as follows:
 - Identifying vendor records manipulation on weekend and/or at abnormal working hours.
 - Identifying POs issued to inactive vendors.
 - Identifying gaps in vendor ID and PO numbers.
-- Identifying similarities across all vendor data ---> similarity across all vendor data (phone, address, tin, etc..) of highest possible name matches (above 60%).
-- Identifying similarities across all active employees vs. vendor data ---> same as above but for all active employees and vendor data (phone, address, tin, etc...).
-- Identifying similarities across all terminated employees vs. vendor data ---> same as above but for all terminated employees and vendor data (phone, address, tin, etc...).
+- Identifying similarities across all vendor data ---> similarity across all vendor data (phone, address, tin, etc..) for highest possible name matches only (above 60%).
+- Identifying similarities across all active employees vs. vendor data ---> same procedures as above applied to active employees and vendor data (phone, address, tin, etc...).
+- Identifying similarities across all terminated employees vs. vendor data ---> same procedures as above applied to terminated employees and vendor data (phone, address, tin, etc...).
 - Identifying POs issued to terminated employees ---> only exact name matches are only considered
 - Summarizing missing vendor details.
 - Summarizing details of POs issued to inactive vendors.
@@ -65,11 +65,11 @@ A set of detailed and summary tables are produced as follows:
 
 ## Challenges
 
-- Instances where full name and abbreviation are both included as an independent records may not be highlighted as a possible match, for example 'PwC' and 'PricewaterhouseCoopers', "P&G' and 'Procter and Gamble'. In such case, concatenate the abbreviation to the full name in excel before loading data. There is a specific example for such case in this test mock data 'SKK' and 'Strosin, K and H (SKK)'.
+- Instances where full name and abbreviation exist as an independent record may not be highlighted as a possible match, for example 'PwC' and 'PricewaterhouseCoopers', "P&G' and 'Procter and Gamble'. In such case, concatenate the abbreviation to the full name before loading data; this will ensure that a match will be spotted, however, with low similarity score. There is a specific example for such case in this mock data for vendor  'SKK' and 'Strosin, K and H (SKK)'.
 
 - User ID may not be the same as Employee ID, thus access rights test results will be affected. In such case unify both IDs by mapping each to a unique ID before loading data.  
  
-- You may not have all the data required in each table or that your dataset records exceed that of the example provided (1000 records), in such case use mock data and just ignore the results to avoid any errors while running the script.
+- You may not have all the data required in each table, in terms of the data itself and not just some missing values, or that your dataset records exceed that of the example provided (1000 records); In such case use mock data and just ignore the results to avoid any errors while running the script.
 
 ## References
 
