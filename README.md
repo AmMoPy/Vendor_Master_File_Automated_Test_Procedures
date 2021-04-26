@@ -29,7 +29,7 @@ Loading data in a CSV format is critical for fast execution time. You can either
 - Use your own CSV files, but make sure to keep columns structure as is (don't change any header unless you are going to edit the related code) and that they are encoded as utf-16.
 - Copy and paste your data to the macro enabled excel sheet that I provided (VMF.xlsm), save it using ctrl + shift + s to activate the macro which will export each sheet into a utf-16 CSV format.
 
-I've provided both Notebook and Python version for convenience. However, working with Python version is more fun! A typical work flow using the macro enabled excel sheet would be as follows:
+I've also provided Notebook version for convenience. However, working with Python script is more fun and interactive! A typical work flow using the macro enabled excel sheet would be as follows:
 
 - Copy paste your data to each sheet respectively, don't change headers!
 - Press ctrl + shift + s to activate the macro and export CSV files. You can then close the excel sheet without saving.
