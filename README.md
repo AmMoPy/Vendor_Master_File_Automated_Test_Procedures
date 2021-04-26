@@ -65,7 +65,9 @@ A set of detailed and summary tables are produced as follows:
 
 ## Challenges
 
-- Instances where full name and abbreviation are both included as an independent records may not be highlighted as a possible match, for example 'PwC' and 'PricewaterhouseCoopers', "P&G' and 'Procter and Gamble'. In such case, concatenate the abbreviation to the full name in excel before loading data. There is a specific example for such case in this test mock data 'SKK' and 'Strosin, K and H (SKK)'
+- Instances where full name and abbreviation are both included as an independent records may not be highlighted as a possible match, for example 'PwC' and 'PricewaterhouseCoopers', "P&G' and 'Procter and Gamble'. In such case, concatenate the abbreviation to the full name in excel before loading data. There is a specific example for such case in this test mock data 'SKK' and 'Strosin, K and H (SKK)'.
+
+- User ID may not be the same as Employee ID, thus access rights test results will be affected. In such case unify both IDs by mapping each to a unique ID before loading data.  
  
 - You may not have all the data required in each table or that your dataset records exceed that of the example provided (1000 records), in such case use mock data and just ignore the results to avoid any errors while running the script.
 
