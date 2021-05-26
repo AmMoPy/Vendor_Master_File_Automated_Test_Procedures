@@ -626,6 +626,8 @@ for i in access_rights_review_df.creation_user_id.unique():
         access_rights_review_df['termination_date'] = access_rights_review_df.modification_user_id.map(
             term_date_dict)
 
+access_rights_review_df.drop_duplicates(subset = 'vendor_id', inplace =True)
+        
 access_rights_review_df.reset_index(drop=True, inplace=True)
 
 temp_employee_df.reset_index(drop=True, inplace=True)
